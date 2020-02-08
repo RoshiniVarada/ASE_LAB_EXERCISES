@@ -1,0 +1,28 @@
+
+ <div class="row" >
+  <div class="col-md-12">
+      <div class="weather">
+          <div class="current">
+              <div class="info col-md-6">
+                 
+                  <div class="city"><small><small>CITY:</small></small> {{this.details.name}}</div>
+                  <div class="temp">{{this.details.main.temp}}&deg; <small>F</small></div>
+                  <div class="wind"><small><small>WIND SPEED:</small></small> {{this.details.wind.speed}} km/h</div>
+                  <div class="wind"><small><small>PRESSURE:</small></small> {{this.details.main.pressure}} pascals</div>
+                  <div class="wind"><small><small>HUMIDITY:</small></small> {{this.details.main.humidity}} g/cc</div>
+                  <div class="wind"><small><small>FEELS_LIKE:</small></small>{{this.details.main.feels_like}}&deg; <small>F</small></div>
+                  
+                 
+              </div>
+           
+              <div class="col-md-6 chartmain" id="chartContainer" style="height: 504px;"></div>
+          </div>
+         
+        
+      </div>
+      <app-carousel [chatCases]="this.chatCases"></app-carousel> 
+  </div>
+</div>
+
+
+

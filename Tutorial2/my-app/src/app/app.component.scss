@@ -1,0 +1,19 @@
+/* Pattern styles */
+.containerg {
+    display: table;
+    width: 100%;
+  }
+  
+  .left-halfh {
+    background-image: url("https://www.shutterstock.com/image-photo/background-clouds-sunlight-against-deep-blue-1547339309");
+    position: absolute;
+    left: 0px;
+    width: 50%;
+  }
+  
+  .right-halfh {
+  background-color: #00ecff;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+  }

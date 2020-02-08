@@ -1,0 +1,24 @@
+<div class="center">
+<div class="col-md-6 cloudset">
+  <br><h2 class="text-center">Welcome to weather Forecast</h2>
+  <br><p class="text-center">Please enter the city name or the Zip code to know the weather details of the city</p>
+  <form [formGroup]="addForm">
+    <div class="form-group">
+      <label for="CountryName">Enter the city Name</label>
+      <input formControlName="CountryName" placeholder="Kansas City" [(ngModel)] ="CountryName" name="CountryName" class="form-control" id="CountryName">
+    </div>
+
+    <div class="form-group">
+      <label for="CountryCode">Enter the zip code</label>
+      <input formControlName="CountryCode" placeholder="MO" [(ngModel)] ="CountryCode" name="CountryCode" class="form-control" id="CountryCode">
+    </div>
+    <div class="row addpadding">
+        <div class="col">
+            <button id="btnSubmit" class="btn btn-primary form-control btn-block" type="submit" (click)="onSubmit()">Submit</button></div>
+           
+        <div class="col">
+          <button class="btn btn-danger form-control  btn-block" (click)="onReset()">Clear</button></div>
+      </div>
+  </form>
+</div>
+</div>
