@@ -1,0 +1,56 @@
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>Application<br> Signup Page</h2>
+       <p>Please register from here to access.</p>
+    </div>
+ </div>
+
+
+
+
+ <div class="main">
+    <div class="container">
+        <div class="col-md-12">
+          <br><h2 class="text-center">Welcome to Smart Fitness</h2>
+          <br><p class="text-center">Please Sign up and enter the Name of the food item to Know the calories in the food item</p>
+         <div  class="underline" (click)="login()" >Login</div>
+          <div *ngIf="userAlreadyexist">
+            Welcome back!  Please Login to continue
+           </div>
+
+
+          <form  [formGroup]="LoginForm" (ngSubmit)="Submit()">
+            <div class="form-group">
+              <label for="UserName">Enter the User Name</label>
+              <input formControlName="UserName" placeholder="Enter the user Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }">  
+              <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
+                <div *ngIf="f.UserName.errors.required">User Name is required</div>
+            </div>
+          </div>
+        
+            <div class="form-group">
+              <label for="Password">Enter the Password</label>
+              <input formControlName="Password" placeholder="Enter the Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors || submitted && loginError }">
+              <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                <div *ngIf="f.Password.errors.required">Enter the password</div>
+            </div>
+          </div>
+            
+            <div class="form-group">
+                <label for="RetypePswd">Enter the Password Again</label>
+                <input formControlName="RetypePswd" placeholder="Enter the Password Again" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.RetypePswd.errors }">
+                <div *ngIf="submitted && f.RetypePswd.errors" class="invalid-feedback">
+                  <div *ngIf="f.RetypePswd.errors.required">Type the password Again</div>
+              </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col">
+                  <button class="btn btn-secondary addmargin" type="button" type="submit" (click)="Register()">Sign up</button>
+                  </div>
+              </div>
+          </form>
+        </div>
+        </div>
+ </div>

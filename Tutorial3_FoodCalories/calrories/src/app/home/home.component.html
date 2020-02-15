@@ -1,0 +1,54 @@
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>Application<br> Login Page</h2>
+       <p>Login from here to access.</p>
+    </div>
+ </div>
+
+
+
+ 
+ <div class="main">
+  <div class="container">
+      <div class="col-md-12">
+        <br><h2 class="text-center">Welcome to Smart Fitness</h2>
+        <br><p class="text-center">Please Login and enter the Name of the food item to Know the calories in the food item</p>
+      
+        <div class="underline" (click)="signup()" >Signup</div>
+        <div *ngIf="loginErrorUsename && !loginErrorPswd">
+          <div class="errorName" *ngIf="loginErrorUsename">Please signup to continue</div>
+      </div>
+      <div *ngIf="loginErrorPswd">
+        <div class="errorName" *ngIf="loginErrorPswd">WelcomeBack!Please enter the proper password</div>
+    </div>
+        <form  [formGroup]="LoginForm" (ngSubmit)="Submit()">
+          
+          <div class="form-group">
+            <label for="UserName">Enter the User Name</label>
+            <input formControlName="UserName" placeholder="Enter the user Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }">  
+            <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
+              <div *ngIf="f.UserName.errors.required">User Name is required</div>
+          </div>
+        </div>
+      
+          <div class="form-group">
+            <label for="Password">Enter the Password</label>
+            <input formControlName="Password" placeholder="Enter the Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors || submitted && loginError }">
+            <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+              <div *ngIf="f.Password.errors.required">Enter the password</div>
+          </div>
+          <div *ngIf="loginErrorPswd" class="invalid-feedback">
+            <div *ngIf="loginErrorPswd">Welcome back! Please enter proper password to continue</div>
+        </div>
+        </div>
+          
+
+          <div class="row">
+              <div class="col">
+                  <button id="btnSubmit" class="btn btn-black addmargin" type="submit" (click)="signin()">Sign in</button>
+              </div>
+            </div>
+        </form>
+      </div>
+      </div>
+</div>

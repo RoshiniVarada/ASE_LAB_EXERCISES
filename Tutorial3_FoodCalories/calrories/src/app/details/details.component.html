@@ -1,0 +1,64 @@
+
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>Food Calories<br> Details Page</h2>
+       <p>Search to check inorder to be fit</p>
+    </div>
+ </div>
+    <div class="main">
+        <div>
+            <div class="col-md-12">
+                    <br><h2 class="text-center">Welcome</h2>
+                    <br><p class="text-center">Please enter the Name of the food item</p>
+                    <div class="text-center">
+                    <label for="ItemName">Enter the Item Name</label>
+                    <input class="marginadd"  [(ngModel)] ="ItemName" name="ItemName"  id="ItemName" type="text">  
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                        <button class="btn btn-secondary" type="button" type="submit" (click)="Search()">Search</button>
+                        </div>
+                    </div>
+                
+<div class="card container" *ngIf="showtable">
+
+    <div class="card-header" style="text-align: center;">
+      <b> Recipe Details</b>
+
+    </div>
+  
+    <div class="card-body padding">
+        <div *ngFor="let x of detailsresult.hits; let i= index">
+          <div class="row">
+            <div class="card col-md-12" *ngIf="i<10">
+              <div class="card-header"><b>{{detailsresult.hits[i].fields.item_name}}</b></div>
+              <div class="card-body">
+                <table>
+                  <tr >
+                    <td style="text-align: center;">Calories </td>
+                    <td >:--></td>
+                    <td>{{detailsresult.hits[i].fields.nf_calories}}</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">Total Fat </td>
+                    <td>:--></td>
+                    <td>{{detailsresult.hits[i].fields.nf_total_fat}}</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">Serving weight(gms)</td>
+                    <td>:--></td>
+                    <td>{{detailsresult.hits[i].fields.nf_serving_weight_grams}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+  </div>
+  
+            </div>
+       </div>
+    </div>
+
