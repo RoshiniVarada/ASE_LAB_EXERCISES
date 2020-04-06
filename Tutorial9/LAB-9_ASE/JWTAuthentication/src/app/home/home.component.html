@@ -1,0 +1,12 @@
+<div class="centerMain">
+  <div>
+    <button class="btns btnwarnings btn-outlineprimary1" style="margin-left: 30%" (click)="getDetails()">Click for User Details</button>
+  </div>
+  <br>
+  <div *ngIf="User_Infor" class="boxstyles" style="color: yellow; font-weight: bold">
+    <h5>User Details</h5>
+    <br>
+    <p>User Name: {{UserInfo.username}}</p>
+    <p>User Password:  {{UserInfo.email}}</p>
+  </div>
+</div>
